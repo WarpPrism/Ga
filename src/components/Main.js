@@ -214,7 +214,7 @@ var AppComponent = React.createClass({
 			}
 
 			imgFigures.push(<ImgFigure data={value} key={index} ref={'imgFigure' + index} arrange={this.state.imgsArrangeArr[index]} inverse={this.inverse(index)} center={this.center(index)}/>)
-			controllerUnits.push(<ControllerUnit key={index} arrange={this.state.imgsArrangeArr[index]} center={this.center(index)} inverse={this.inverse(index)}/>);
+			controllerUnits.push(<ControllerUnit index={index} key={index} arrange={this.state.imgsArrangeArr[index]} center={this.center(index)} inverse={this.inverse(index)} />);
 		}.bind(this));
 
 		return (
@@ -296,7 +296,7 @@ var ControllerUnit = React.createClass({
 			}
 		}
 		return (
-			<span className={controllerUnitClassName} onClick={this.handleClick}></span>
+			<span className={controllerUnitClassName} onClick={this.handleClick}>{this.props.index + 1}</span>
 		);
 
 	}
